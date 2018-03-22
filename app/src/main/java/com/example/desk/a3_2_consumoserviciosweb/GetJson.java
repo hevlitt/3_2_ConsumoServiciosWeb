@@ -27,7 +27,7 @@ public class GetJson extends AsyncTask<Void,Void,Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         try{
-            URL url = new URL("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR");
+            URL url = new URL("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR,MXN");
             HttpURLConnection httpURLConnection = (HttpURLConnection)
                     url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
@@ -43,7 +43,8 @@ public class GetJson extends AsyncTask<Void,Void,Void> {
 
             singleParsed="USD: " + JO.get("USD") +
                     "\nJPY: " + JO.get("JPY") + "\n"+
-                    "EUR: " + JO.get("EUR") + "\n";
+                    "EUR: " + JO.get("EUR") + "\n"+
+                    "MXN: " + JO.get("MXN") + "\n";
             dataParsed = dataParsed + singleParsed +"\n" ;
 
         }catch (MalformedURLException e) {
